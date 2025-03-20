@@ -12,5 +12,6 @@ These are sample NIfTI images designed for evaluating viewing tools like [NiiVue
  - `CT_pitch` is courtesy of Paul Morgan. The acquisition is rotated with respect to the scanner bore, but does not exhibit shear (gantry tilt).
  - `Iguana` is a desert [desert iguana](http://digimorph.org/specimens/Dipsosaurus_dorsalis/) from Dr. Jessie Maisano. University of Texas High-Resolution X-ray CT Facility Archive 0787. [CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/).
  - `MR_Gd` shows a [Skull-stripped Contrast-Enhanced brain MRI](https://figshare.com/articles/dataset/Skull-stripped_Contrast-Enhanced_MRI_Datasets/7472168).
+ - `rgb_bmp` is the `kodim23` bitmap image from the open source Kodak repository. The graysale `gray_bmp` is the open source `cameraman` image used in many Python image processing demos.
  - `spm152` and `mni152` are derived from the [ICBM 152 Nonlinear atlases version 2009](https://www.bic.mni.mcgill.ca/ServicesAtlases/ICBM152NLin2009). The spm152 is average brain size, while the mni152 matches the size of the [MNI ICBM template](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6050588/).
  - `visiblehuman` is from the [visible human project](https://www.nlm.nih.gov/research/visible/visible_human.html)
