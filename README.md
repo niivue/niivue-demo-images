@@ -10,6 +10,7 @@ These are sample NIfTI images designed for evaluating viewing tools like [NiiVue
  - `CT_Electrodes` is from the [Seg3DData ](https://github.com/CIBC-Internal/Seg3DData) repository. It is distributed using the [MIT license](https://opensource.org/licenses/MIT) from the Scientific Computing and Imaging Institute, University of Utah (2015).
  - `CT_Philips` is courtesy of Philips Medical and described [here](https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage#Computed_Tomography_.28CT.2C_CAT.29).
  - `CT_pitch` is courtesy of Paul Morgan. The acquisition is rotated with respect to the scanner bore, but does not exhibit shear (gantry tilt).
+ - `HCD1464653.qsdr.fz` is courtesy of Frank Yeh to illustrate DSI-Studio masked images.
  - `Iguana` is a desert [desert iguana](http://digimorph.org/specimens/Dipsosaurus_dorsalis/) from Dr. Jessie Maisano. University of Texas High-Resolution X-ray CT Facility Archive 0787. [CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/).
  - `MR_Gd` shows a [Skull-stripped Contrast-Enhanced brain MRI](https://figshare.com/articles/dataset/Skull-stripped_Contrast-Enhanced_MRI_Datasets/7472168).
  - `rgb_bmp` is the `kodim23` bitmap image from the open source Kodak repository. The graysale `gray_bmp` is the open source `cameraman` image used in many Python image processing demos.
