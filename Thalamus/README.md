@@ -13,6 +13,10 @@ To support efficient visualization, we provide a script that converts any SPAM a
 
 This example uses UINT8 precision for compatibility and compactness, but the method can be adapted to use higher precision (e.g., [RGBA32F](https://webgl2fundamentals.org/webgl/lessons/webgl-data-textures.html)) for atlases with more regions or finer probabilistic detail. NiiVue also exploits the probability of the first label as a [distance field](https://www.redblobgames.com/x/2403-distance-field-fonts/) to provide smooth regional outlines. We refer to this format as Sparse Probabilistic Atlas with Ranked Quad encoding (SPARQ). These files are identified by the [RGBA intent code](https://brainder.org/2012/09/23/the-nifti-file-format/) and `SPARQ` in the intent_name. Currently, NiiVue is the only tool able to interpret these images, but we hope the inherent advantages of this format will lead to broader adoption.
 
+The figure below provides a concrete example of SPARQ encoding. The color lookup table (LUT) assigns yellow to the left and right hippocampus (indices 1 and 2), orange to the left and right nucleus accumbens (3 and 4), and cyan to the left and right amygdala (5 and 6). Consider a voxel quad with four color components: [2, 6, 191, 63]. This indicates that the voxel is composed of 76% right hippocampus (index 2, weight 191/255) and 25% right amygdala (index 6, weight 63/255). The resulting blended color is a mint green—derived from 75% yellow and 25% cyan.
+
+![SPARQ](sparq.png)
+
 ## Creating new Atlases
 
 The provided Python script can convert a probabilistic atlas to SPARQ. For example, if for the [Thalamus_Nuclei-HCP-4DSPAMs](https://zenodo.org/records/1405484) you can run:
