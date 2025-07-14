@@ -4,7 +4,8 @@ The Allen Human Reference Atlas segments every voxel of the brain into 141 struc
 
 ## Creating new Atlases
 
-The original annotation image (annotation_full.nii.gz) uses a float32 datatype to store integer-valued labels. While there are only 142 unique structures (including background), the label values span a wide range — from 10307 to 266441657. Unfortunately, values this large exceed the exact integer representation of float32 (see flintmax), leading to rounding errors. As a result, direct mapping from text files (which list true integer labels) to image voxel values fails unless this loss of precision is accounted for.
+The original annotation image (annotation_full.nii.gz) uses a float32 datatype to store integer-valued labels. While there are only 142 unique structures (including background), the label values span a wide range — from 10307 to 266441657. Unfortunately, values this large exceed the exact integer representation of float32 (see [flintmax](https://www.mathworks.com/help/matlab/ref/flintmax.html)), leading to rounding errors. As a result, direct mapping from text files (which list true integer labels) to image voxel values fails unless this loss of precision is accounted for. Therefore, storing with the 142 indicies sequentially as uint8 reduces both complexity and resource demands.
+
 ```bash
 python remap_annotation.py
 ```

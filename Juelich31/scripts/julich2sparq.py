@@ -6,14 +6,22 @@ import csv
 
 def load_region_map(csv_path):
     region_names = []
+    region_to_index = {}
     with open(csv_path, newline='') as csvfile:
         reader = csv.reader(csvfile, delimiter=';')
         for row in reader:
             if not row or row[0].startswith('#'):
                 continue
             if len(row) > 1:
-                region_names.append(row[1])
-    return region_names
+                try:
+                    label_index = int(row[0])
+                    region_name = row[1]
+                    region_names.append(region_name)
+                    region_to_index[region_name] = label_index
+                except ValueError:
+                    continue  # skip malformed lines
+    return region_names, region_to_index
+
 
 def main():
     if len(sys.argv) < 3:
@@ -24,7 +32,7 @@ def main():
     root_dir = sys.argv[2]
     hemi = sys.argv[3] if len(sys.argv) > 3 else 'lh'
 
-    region_names = load_region_map(csv_path)
+    region_names, region_to_index = load_region_map(csv_path)
     volumes = []
     labels = []
 
@@ -65,8 +73,9 @@ def main():
     # Convert probs to uint8 0–255
     top2_prob = np.clip(np.round(top2_prob * 255), 0, 255).astype(np.uint8)
 
-    # 1-based labels, zero out where prob is zero
-    top2_idx = top2_idx + 1
+    # Convert top2 indices to mapped label indices
+    label_indices = np.array([region_to_index.get(name, 0) for name in labels], dtype=np.uint16)
+    top2_idx = label_indices[top2_idx]
     top2_idx[top2_prob == 0] = 0
 
     # Stack RGBA
