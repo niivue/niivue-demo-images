@@ -4,12 +4,25 @@ Pauli and colleagues ([2018](https://pubmed.ncbi.nlm.nih.gov/29664465/)) provide
 
 ## Creating new Atlases
 
-The provided Python scripts can convert a probabilistic atlas to SPARQ. For example, to convert the original images you can run:
+This repository provides a converted atlas. For completeness, we also provide scripts to replicate and tune this process. Given the original images, you can recreate our images with these commands:
 
 ```bash
-python spam2sparq.py CIT168toMNI152-2009c_prob.nii.gz
-python crop_sparq_to_rgba32.py CIT168toMNI152-2009c_prob.nii.gz
+python split_left_right.py CIT168toMNI152-2009c_prob.nii.gz
+python spam2sparq.py CIT168toMNI152-2009c_prob_split.nii.gz
+python crop_sparq_to_rgba32.py CIT168toMNI152-2009c_prob_split_sparq.nii.gz
+mv CIT168toMNI152-2009c_prob_split_sparq_cropped.nii CIT168.nii 
+pigz -m -n -11 CIT168.nii 
+#create meshes
+python 4Datlas2mesh.py CIT168toMNI152-2009c_prob_split.nii.gz 2 0.3
+python concatenatemeshes.py CIT168toMNI152-2009c_prob_split CIT168
 ```
+
+The rationale for each step is as follows:
+ 1. split_left_right: The original atlas does not distinguish between left and right regions. This script makes a separate volume for the left and right side of each structure.
+ 2. spam2sparq: Convert an input 4D NIfTI image where each region to a single 3D volume with RGBA datatype. This script creates  4 volume image encoding most likely indices and probabilities.
+ 3. spam2sparq: convert 4-volume input into single RGBA volume, crop empty borders.
+ 4. 4Datlas2mesh: convert each region to a mesh. The tunable parameters are smoothing (e.g. 2mm full width half maximum) and mesh simplification (e.g. 0.3 eliminates 70% of the triangles).
+ 5. concatenatemeshes: create a single mesh that includes all regions.
 
 ## Links
 
