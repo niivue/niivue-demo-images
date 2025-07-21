@@ -4,18 +4,18 @@ import numpy as np
 import nibabel as nib
 
 if len(sys.argv) != 2 or not sys.argv[1].endswith(('.nii', '.nii.gz')):
-    print("Usage: python spam2sparq.py input_filename.nii[.gz]")
+    print("Usage: python spam2paqd.py input_filename.nii[.gz]")
     sys.exit(1)
 
 input_path = sys.argv[1]
 
-# Create output filename by inserting "_sparq" before extension
+# Create output filename by inserting "_paqd" before extension
 if input_path.endswith('.nii.gz'):
     base = input_path[:-7]
-    output_path = base + '_sparq.nii.gz'
+    output_path = base + '_paqd.nii.gz'
 elif input_path.endswith('.nii'):
     base = input_path[:-4]
-    output_path = base + '_sparq.nii.gz'
+    output_path = base + '_paqd.nii.gz'
 else:
     print("Input file must end with .nii or .nii.gz")
     sys.exit(1)
@@ -65,10 +65,10 @@ hdr = img.header
 hdr.set_data_dtype(np.uint8)
 hdr.set_xyzt_units('mm')
 hdr.set_intent(2004)  # NIFTI_INTENT_RGBA_VECTOR
-hdr['intent_name'] = b'SPARQ'
+hdr['intent_name'] = b'PAQD'
 hdr['dim'][0] = 5
 hdr['dim'][4] = 1
 hdr['dim'][5] = 4
 
 nib.save(img, output_path)
-print(f"SPARQ image saved as {output_path}")
+print(f"PAQD image saved as {output_path}")

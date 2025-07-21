@@ -58,6 +58,6 @@ def crop_and_convert(input_path):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python crop_sparq_to_rgba32.py <input_file.nii[.gz]>")
+        print("Usage: python crop_paqd_to_rgba32.py <input_file.nii[.gz]>")
         sys.exit(1)
     crop_and_convert(sys.argv[1])

@@ -25,7 +25,7 @@ def load_region_map(csv_path):
 
 def main():
     if len(sys.argv) < 3:
-        print("Usage: python julich2sparq.py atlas.csv folder/ [lh|rh]")
+        print("Usage: python julich2paqd.py atlas.csv folder/ [lh|rh]")
         sys.exit(1)
 
     csv_path = sys.argv[1]
@@ -94,14 +94,14 @@ def main():
     hdr.set_data_dtype(np.uint8)
     hdr.set_xyzt_units('mm')
     hdr.set_intent(2004)
-    hdr['intent_name'] = b'SPARQ'
+    hdr['intent_name'] = b'PAQD'
     hdr['dim'][0] = 5
     hdr['dim'][4] = 1
     hdr['dim'][5] = 4
 
-    out_path = f"{os.path.basename(root_dir.rstrip('/'))}_{hemi}_sparq.nii.gz"
+    out_path = f"{os.path.basename(root_dir.rstrip('/'))}_{hemi}_paqd.nii.gz"
     nib.save(img, out_path)
-    print(f"Saved SPARQ image: {out_path}")
+    print(f"Saved PAQD image: {out_path}")
 
 if __name__ == "__main__":
     main()
