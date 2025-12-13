@@ -4,6 +4,7 @@ These are sample NIfTI images designed for evaluating viewing tools like [NiiVue
 
 ## Licenses
 
+ - `2UXO-ribbon-rainbow-vis_NIH3D` is from [NIH3D](https://3d.nih.gov/entries/22673) and described in [PMID:17466326](https://pubmed.ncbi.nlm.nih.gov/17466326/).
  - `chris_MRA`, `chris_PD`, `chris_t1`, `chris_t2`, `fmri_pitch`, `pcasl` and `spmMotor` show proton density, T1-weighted, T2-weighted and fMRI statistical map images. They were acquired by Chirs Rorden at the [McCausland Center for Brain Imaging](https://www.mccauslandcenter.sc.edu) and are distributed under the [CC BY-NC 4.0 license](https://creativecommons.org/licenses/by-nc/4.0/).
  - `CT_Abdo` was provided by Steve Pieper and is from a Slicer3D [example dataset](https://www.slicer.org/wiki/File:CTA-cardio.nrrd).
  - `CT_AVM` is [from Github](https://github.com/IbisNeuronav/PRISMDatabase) as an example for [IBIS](https://pubmed.ncbi.nlm.nih.gov/27581336/).
@@ -15,4 +16,4 @@ These are sample NIfTI images designed for evaluating viewing tools like [NiiVue
  - `MR_Gd` shows a [Skull-stripped Contrast-Enhanced brain MRI](https://figshare.com/articles/dataset/Skull-stripped_Contrast-Enhanced_MRI_Datasets/7472168).
  - `rgb_bmp` is the `kodim23` bitmap image from the open source Kodak repository. The graysale `gray_bmp` is the open source `cameraman` image used in many Python image processing demos.
  - `spm152` and `mni152` are derived from the [ICBM 152 Nonlinear atlases version 2009](https://www.bic.mni.mcgill.ca/ServicesAtlases/ICBM152NLin2009). The spm152 is average brain size, while the mni152 matches the size of the [MNI ICBM template](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6050588/).
- - `visiblehuman` is from the [visible human project](https://www.nlm.nih.gov/research/visible/visible_human.html)
+ - `visiblehuman` is from the [visible human project](https://www.nlm.nih.gov/research/visible/visible_human.html).
