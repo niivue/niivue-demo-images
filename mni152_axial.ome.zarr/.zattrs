@@ -1,0 +1,115 @@
+{
+  "multiscales": [
+    {
+      "axes": [
+        {
+          "name": "x",
+          "type": "space"
+        },
+        {
+          "name": "y",
+          "type": "space"
+        },
+        {
+          "name": "z",
+          "type": "space"
+        }
+      ],
+      "datasets": [
+        {
+          "path": "scale0/nibabel_converted_image",
+          "coordinateTransformations": [
+            {
+              "scale": [
+                0.737463116645813,
+                0.737463116645813,
+                0.737463116645813
+              ],
+              "type": "scale"
+            },
+            {
+              "translation": [
+                -75.76253509521484,
+                -110.76253509521484,
+                7.146018385887146
+              ],
+              "type": "translation"
+            }
+          ]
+        },
+        {
+          "path": "scale1/nibabel_converted_image",
+          "coordinateTransformations": [
+            {
+              "scale": [
+                1.474926233291626,
+                1.474926233291626,
+                0.737463116645813
+              ],
+              "type": "scale"
+            },
+            {
+              "translation": [
+                -75.39380353689194,
+                -110.39380353689194,
+                7.146018385887146
+              ],
+              "type": "translation"
+            }
+          ]
+        },
+        {
+          "path": "scale2/nibabel_converted_image",
+          "coordinateTransformations": [
+            {
+              "scale": [
+                2.949852466583252,
+                2.949852466583252,
+                0.737463116645813
+              ],
+              "type": "scale"
+            },
+            {
+              "translation": [
+                -74.65634042024612,
+                -109.65634042024612,
+                7.146018385887146
+              ],
+              "type": "translation"
+            }
+          ]
+        },
+        {
+          "path": "scale3/nibabel_converted_image",
+          "coordinateTransformations": [
+            {
+              "scale": [
+                5.899704933166504,
+                5.899704933166504,
+                0.737463116645813
+              ],
+              "type": "scale"
+            },
+            {
+              "translation": [
+                -73.1814141869545,
+                -108.1814141869545,
+                7.146018385887146
+              ],
+              "type": "translation"
+            }
+          ]
+        }
+      ],
+      "name": "nibabel_converted_image",
+      "version": "0.4",
+      "type": "itkwasm_gaussian",
+      "metadata": {
+        "description": "Smoothed with a discrete gaussian filter to generate a scale space, ideal for intensity images. ITK-Wasm implementation is extremely portable and SIMD accelerated.",
+        "method": "itkwasm_downsample.downsample",
+        "version": "1.8.1"
+      },
+      "@type": "ngff:Image"
+    }
+  ]
+}
