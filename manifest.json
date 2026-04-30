@@ -1,0 +1,22 @@
+[
+  "CT_AVM.nii.gz",
+  "CT_Abdo.nii.gz",
+  "CT_Electrodes.nii.gz",
+  "CT_Philips.nii.gz",
+  "CT_pitch.nii.gz",
+  "Iguana.nii.gz",
+  "M2208_T2w.nii.gz",
+  "M2208_dog.nii.gz",
+  "MR_Gd.nii.gz",
+  "chris_MRA.nii.gz",
+  "chris_PD.nii.gz",
+  "chris_t1.nii.gz",
+  "chris_t2.nii.gz",
+  "fmri_pitch.nii.gz",
+  "mni152.nii.gz",
+  "mni152hr.nii.gz",
+  "pcasl.nii.gz",
+  "spm152.nii.gz",
+  "spmMotor.nii.gz",
+  "visiblehuman.nii.gz"
+]
